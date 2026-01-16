@@ -6,6 +6,7 @@
 define h = Character("Hien", image = "hien", color = "#a0a82c", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
 define b = Character("Blair", image = "blair", color = "#9E4331", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
 define narrator = Character(name=None, ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
+define n = Character(None, kind=nvl)
 
 # side images 
 image side hien crying:
