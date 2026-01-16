@@ -7,6 +7,47 @@ define h = Character("Hien", image = "hien", color = "#599E31", ctc = "ctc", ctc
 define b = Character("Blair", image = "blair", color = "#9E4331", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
 define narrator = Character(name=None, image = "hien", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
 
+# side images 
+image side hien crying:
+    "images/side_hien_crying.png"
+    zoom 0.5
+image side hien dejected:
+    "images/side_hien_dejected.png"
+    zoom 0.5
+image side hien exhausted:
+    "images/side_hien_exhausted.png"
+    zoom 0.5
+image side hien frustrated:
+    "images/side_hien_frustrated.png"
+    zoom 0.5
+image side hien happy:
+    "images/side_hien_happy.png"
+    zoom 0.5
+image side hien nervous:
+    "images/side_hien_nervous.png"
+    zoom 0.5
+image side hien neutral glance:
+    "images/side_hien_neutral_glance.png"
+    zoom 0.5
+image side hien neutral mouthopen:
+    "images/side_hien_neutral_mouthopen.png"
+    zoom 0.5
+image side hien neutral:
+    "images/side_hien_neutral.png"
+    zoom 0.5
+image side hien pleadingx2:
+    "images/side_hien_pleadingx2.png"
+    zoom 0.5
+image side hien shocked:
+    "images/side_hien_shocked.png"
+    zoom 0.5
+image side hien slightsmile:
+    "images/side_hien_slightsmile.png"
+    zoom 0.5
+image side hien worried:
+    "images/side_hien_worried.png"
+    zoom 0.5
+
 # ctc
 image ctc:
     "gui/ctc_click.png"

@@ -1,4 +1,6 @@
 ﻿label argument:
+    scene bg altdinner with slow_dissolve
+    
     h "Why are you being so adamant on straying away from me?"
     h "Don’t you WANT to stay together?"
     b "I just need you to give me some time."
