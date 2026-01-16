@@ -94,7 +94,7 @@ label ending:
         alpha 0.4
     with slow_dissolve
     "{cps=20}{b}True Ending: Limerance.{/b}{/cps}"
-    stop music with fadeout 2.0
+    stop music fadeout 2.0
     scene black with slow_dissolve
     $ persistent.endingOne = False
     return
