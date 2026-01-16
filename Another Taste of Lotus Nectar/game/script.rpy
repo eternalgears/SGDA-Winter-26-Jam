@@ -22,7 +22,7 @@ define sprite_dissolve = Dissolve(0.3)
 define config.say_attribute_transition = sprite_dissolve
 default preferences.skip_unseen = False
 
-# images
+## images
 image white = "#fff"
 image black = "#000000"
 
