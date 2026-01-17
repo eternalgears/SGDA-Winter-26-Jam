@@ -4,7 +4,7 @@
     pause
     show blair glare at center with sprite_dissolve:
         zoom 0.7
-    h pleadingx2 "Why are you being so adamant on straying away from me?"
+    h shocked "Why are you being so adamant on straying away from me?"
     h dejected "Didn't you WANT to stay together?"
     b annoyed "I just need you to give me some time."
     h exhausted "Blair, I’ve given you nothing but all the time in the world."
@@ -12,7 +12,7 @@
     show cg angry with sprite_dissolve
     with hpunch
     b "Well I’d appreciate it if you'd get off my back about every little thing I do wrong!"
-    b "Everything is just not enough for you, is it?!"
+    b angry "Everything is just not enough for you, is it?!"
     h worried "..."
     h neutral "...It’s okay if you’re mean to me sometimes,{w=0.2} or even most of the time.{w=0.2} I don’t care."
     hide cg angry with slow_dissolve
@@ -29,7 +29,7 @@
     h pleadingx2 "Can you do that?"
     b bored "Hm…"
     b default "Are you asking for reassurance, then?"
-    h crying "Yes…"
+    h exhausted "Yes…"
     #The following line appears only in the 2nd playthrough
     if persistent.endingOne == False:
         $ renpy.pause(1.0, hard=True)
@@ -41,7 +41,7 @@
     b annoyed "But…"
     b "I’ve told you…{w=0.2} countless times that you didn’t need to worry about it."
     stop music fadeout 0.5
-    b angry "{cps=15}Do I always have to tell you that {color=#ff0000}\"I love you\"{/color} to believe me…?{/cps}"
+    b angry "{cps=15}Do I always have to tell you that {color=#ff0000}\"I love you\"{/color} for you to believe me…?{/cps}"
     show red:
         alpha 0.3
     hide hien
@@ -64,12 +64,13 @@
 label fight:
     hide red
     hide blair
+    play sound "<volume 0.8>audio/falldown.wav"
     show black with vpunch
     b "Ghk…!"
     "I manage to catch her off balance and knock her to the ground before she can get too close."
     play sound "audio/knifedrop.wav"
     "She lets go of the knife and I kick it across the floor, far from her reach."
-    h "Blair……?"
+    h shocked "Blair……?"
     play music "<volume 0.6>audio/gameover.mp3" fadein 1.0 fadeout 5.0
     show black with slow_dissolve:
         alpha 0.7
@@ -84,6 +85,7 @@ label fight:
         alpha 0.4
     show blair sobbing at centerzoom with sprite_dissolve:
         zoom 0.9
+    play sound "<volume 0.5>audio/hug.wav"
     with hpunch
     "She throws her arms around my body."
     b "I’m sorry.{w=0.2} I’m sorry.{w=0.2} I’m sorry."
@@ -135,15 +137,20 @@ label nothing:
         alpha 1.0
     with vpunch
     "..!!"
-    "{cps=30}I feel something…sharp at the side of my stomach.{/cps}"
-    play music "<volume 0.3>audio/gameover.mp3" fadein 1.0 fadeout 5.0
+    "{cps=30}There's something...sharp at the side of my stomach.{/cps}"
+    play sound "<volume 0.8>audio/falldown.wav"
+    show black with vpunch
+    $ renpy.pause(2.3, hard=True)
+    play music "<volume 0.25>audio/gameover.mp3" fadein 1.0 fadeout 5.0
+    hide black with slow_dissolve
     scene bg altdinner:
         blur 16
     show red:
         alpha 0.5
     with slow_dissolve
-    pause
-    "{cps=20}In the blur of my vision, I see a pool of blood gushing from where I am.{/cps}"
+    $ renpy.pause(2.3, hard=True)
+    "{cps=20}I'm on the floor...?{/cps}"
+    "{cps=20}In the blur of my vision, I see a pool of blood gushing out from where I am.{/cps}"
     "{cps=15}Blair...{w=0.5} How could you?{/cps}"
     b "Don’t worry."
     b "No one can hurt you now."
