@@ -191,12 +191,12 @@ label intro:
 
         screen knife_select:
             imagebutton:
-                xpos 0.6
-                ypos 0.1
+                xpos 0.69235 #0.6925
+                ypos 0.1954 #0.1954
                 xanchor 0.5
                 yanchor 0.5
-                idle "cabinet.png"
-                hover "cabinet.png"
+                idle "cabinet1.png"
+                hover "cabinet1_hover.png"
                 action Jump("get_knife")
         #menu:
             #"Get knife.":
