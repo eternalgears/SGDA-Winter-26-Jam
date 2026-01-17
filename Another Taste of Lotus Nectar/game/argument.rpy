@@ -1,5 +1,5 @@
 ﻿label argument:
-    play music "<volume 0.8>audio/fight.wav" fadein 1.0 fadeout 0.5
+    play music "<volume 0.65>audio/fight.wav" fadein 4.0 fadeout 0.5
     scene bg altdinner with slow_dissolve
     pause
     show blair glare at center with sprite_dissolve:
@@ -8,14 +8,19 @@
     h dejected "Didn't you WANT to stay together?"
     b annoyed "I just need you to give me some time."
     h exhausted "Blair, I’ve given you nothing but all the time in the world."
+    play sound "audio/table slam.wav"
+    show cg angry with sprite_dissolve
     with hpunch
-    b enraged "Well I’d appreciate it if you'd get off my back about every little thing I do wrong!"
+    b "Well I’d appreciate it if you'd get off my back about every little thing I do wrong!"
+    b "Everything is just not enough for you, is it?!"
     h worried "..."
     h neutral "...It’s okay if you’re mean to me sometimes,{w=0.2} or even most of the time.{w=0.2} I don’t care."
+    hide cg angry with slow_dissolve
     show blair acknowledging at center with sprite_dissolve:
         zoom 0.7
     $ renpy.pause(1.0, hard=True)
     h worried "I’ll be okay if you can show me some affection every once in a while."
+    hide cg angry
     show blair glance at center with sprite_dissolve:
         zoom 0.7
     "Blair says nothing and looks away."
@@ -38,10 +43,11 @@
     stop music fadeout 0.5
     b angry "{cps=15}Do I always have to tell you that {color=#ff0000}\"I love you\"{/color} to believe me…?{/cps}"
     show red:
-        alpha 0.6
+        alpha 0.3
     hide hien
     show blair enraged at centerzoom with sprite_dissolve:
         zoom 0.9
+    play sound "audio/knife.wav"
     "{cps=40}{i}Without giving me time to think, Blair rushed at me with a look in her eye I’d never seen before.{i}{nw}{/cps}"
     # Choices for 2nd playthrough only
 
@@ -61,6 +67,7 @@ label fight:
     show black with vpunch
     b "Ghk…!"
     "I manage to catch her off balance and knock her to the ground before she can get too close."
+    play sound "audio/knifedrop.wav"
     "She lets go of the knife and I kick it across the floor, far from her reach."
     h "Blair……?"
     play music "<volume 0.6>audio/gameover.mp3" fadein 1.0 fadeout 5.0
@@ -123,6 +130,7 @@ label fight:
 
 label nothing:
     # Fade to red?
+    play sound "audio/stab.wav"
     show red with sprite_dissolve:
         alpha 1.0
     with vpunch
