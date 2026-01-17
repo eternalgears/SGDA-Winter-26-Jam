@@ -3,10 +3,61 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define h = Character("Hien", image = "hien", color = "#599E31", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
+define h = Character("Hien", image = "hien", color = "#a0a82c", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
 define b = Character("Blair", image = "blair", color = "#9E4331", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
-define narrator = Character(name=None, image = "hien", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
+define narrator = Character(name=None, ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
+define n = Character(None, kind=nvl)
 
+# side images 
+image side hien crying:
+    "images/side_hien_crying.png"
+    zoom 0.5
+image side hien dejected:
+    "images/side_hien_dejected.png"
+    zoom 0.5
+image side hien exhausted:
+    "images/side_hien_exhausted.png"
+    zoom 0.5
+image side hien frustrated:
+    "images/side_hien_frustrated.png"
+    zoom 0.5
+image side hien happy:
+    "images/side_hien_happy.png"
+    zoom 0.5
+image side hien nervous:
+    "images/side_hien_nervous.png"
+    zoom 0.5
+image side hien neutral glance:
+    "images/side_hien_neutral_glance.png"
+    zoom 0.5
+image side hien neutral mouthopen:
+    "images/side_hien_neutral_mouthopen.png"
+    zoom 0.5
+image side hien neutral:
+    "images/side_hien_neutral.png"
+    zoom 0.5
+image side hien pleadingx2:
+    "images/side_hien_pleadingx2.png"
+    zoom 0.5
+image side hien shocked:
+    "images/side_hien_shocked.png"
+    zoom 0.5
+image side hien slightsmile:
+    "images/side_hien_slightsmile.png"
+    zoom 0.5
+image side hien worried:
+    "images/side_hien_worried.png"
+    zoom 0.5
+
+#transform
+
+transform center:
+    xalign 0.5
+    yalign 1.0
+
+transform centerzoom:
+    xalign 0.5
+    yalign 0.1
 # ctc
 image ctc:
     "gui/ctc_click.png"
@@ -18,12 +69,14 @@ image ctc:
 default preferences.text_cps = 34
 define slow_dissolve = Dissolve(1.0)
 define medium_dissolve = Dissolve(0.7)
-define sprite_dissolve = Dissolve(0.3)
+define sprite_dissolve = Dissolve(0.2)
 define config.say_attribute_transition = sprite_dissolve
+define config.side_image_same_transform = sprite_dissolve
 default preferences.skip_unseen = False
 
-# images
+## images
 image white = "#fff"
+image red = "#ff0000"
 image black = "#000000"
 
 # The game starts here.
