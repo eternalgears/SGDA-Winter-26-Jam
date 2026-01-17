@@ -25,11 +25,17 @@
     # Choices for 2nd playthrough only
 
     #Menu Choices
-    menu:
-        "Fight":
-            jump fight
-        "Do nothing":
-            jump nothing  
+    label argumentmenu:
+        $ time = 5
+        $ timer_range = 5
+        $ timer_jump = "nothing"
+        show screen countdown
+        menu:
+            "Fight":
+                hide screen countdown
+                jump fight
+            #"Do nothing":
+                #jump nothing  
     
     #1. FIGHT SECTION
     # jaden note: i have like no clue how i am going to polish this
