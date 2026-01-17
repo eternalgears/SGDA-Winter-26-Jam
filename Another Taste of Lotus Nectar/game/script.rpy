@@ -26,6 +26,8 @@ default preferences.skip_unseen = False
 # images
 image white = "#fff"
 image black = "#000000"
+image mold = Fixed(SnowBlossom("images/mold.png", count=75, xspeed=(-30,30), yspeed=(10,50), start=50))
+image knife = "images/Knife.png"
 
 # side images 
 image side hien crying:
@@ -163,6 +165,7 @@ label intro:
         scene bg kitchen with slow_dissolve
     elif persistent.endingOne == True:
         scene bg altkitchen with slow_dissolve
+        show mold
     narrator neutral "I’m making dinner for Blair again."
     narrator nervous "It’s not like I don’t enjoy making food for her,{w=0.2} she just hasn’t been as grateful as she used to be."
     "A few months ago,{w=0.1} making dinner would earn me an endless shower of her affection."
@@ -184,7 +187,28 @@ label intro:
         narrator nervous "Right?"
         jump kitchen
     else: #persistent.endingOne == True
-        menu:
-            "Get knife.":
-                "Obtained knife."
-                jump kitchen
+        call screen knife_select
+
+        screen knife_select:
+            imagebutton:
+                xpos 0.6
+                ypos 0.1
+                xanchor 0.5
+                yanchor 0.5
+                idle "cabinet.png"
+                hover "cabinet.png"
+                action Jump("get_knife")
+        #menu:
+            #"Get knife.":
+                #show knife:
+                    #xalign 0.5
+                    #yalign 0.5
+                #narrator neutral "Obtained knife."
+                #jump kitchen
+
+label get_knife:
+    show knife:
+        xalign 0.5
+        yalign 0.5
+    narrator neutral "Obtained knife."
+    jump kitchen

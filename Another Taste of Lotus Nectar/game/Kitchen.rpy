@@ -1,4 +1,5 @@
 ﻿label kitchen:
+    scene bg dinner with slow_dissolve
     h happy "I made some spaghetti…"
     h "Here you go."
     show blair default at center with sprite_dissolve:
@@ -84,11 +85,11 @@ label pressfurther:
     b frustrated "..."
     h worried "You’ve been…inconsiderate lately."
     # blair is still stoic while asking questions here
-    b bored "How so?"
+    b annoyed2 "How so?"
     h shocked "Huh?"
-    b annoyed2 "When have I ever been ‘inconsiderate’?"
+    b default "When have I ever been ‘inconsiderate’?"
     h nervous "Well… whenever I try to communicate with you, you always shut it down."
-    b "How am I shutting it down?"
+    b annoyed "How am I shutting it down?"
 
     # menu choices (all choices in this menu have no effect on the ending)
     menu:
@@ -136,7 +137,7 @@ label frustrations:
     narrator worried "This was supposed to be the part where you apologize and say you are going to try harder for the both of us."
     narrator pleadingx2 "Now you are questioning the nature of our relationship??"
     hide cg annoy
-    
+
     jump argument
 
     # end of PRESS FURTHER SECTION
