@@ -1,9 +1,10 @@
 ﻿label argument:
-    play music "<volume 0.65>audio/fight.wav" fadein 4.0 fadeout 0.5
-    scene bg altdinner with slow_dissolve
-    pause
-    show blair glare at center with sprite_dissolve:
+    hide black
+    play music "<volume 3.0>audio/room noise.mp3" fadein 0.5 fadeout 0.5
+    scene bg altdinner
+    show blair annoyed at center:
         zoom 0.7
+    with slow_dissolve
     h shocked "Why are you being so adamant on straying away from me?"
     h dejected "Didn't you WANT to stay together?"
     b annoyed "I just need you to give me some time."
@@ -48,13 +49,13 @@
     show blair enraged at centerzoom with sprite_dissolve:
         zoom 0.9
     play sound "audio/knife.wav"
-    "{cps=40}{i}Without giving me time to think, Blair rushed at me with a look in her eye I’d never seen before.{i}{nw}{/cps}"
+    t "{cps=40}{i}Without giving me time to think, Blair rushed at me with a look in her eye I’d never seen before.{i}{nw}{/cps}"
     # Choices for 2nd playthrough only
 
     #Menu Choices
     label argumentmenu:
-        $ time = 5
-        $ timer_range = 5
+        $ time = 1.1
+        $ timer_range = 1.1
         $ timer_jump = "nothing"
         show screen countdown
         menu:
@@ -68,20 +69,22 @@
     # jaden note: i have like no clue how i am going to polish this
 
 label fight:
+    $ renpy.block_rollback()
     hide red
     hide blair
     play sound "<volume 0.8>audio/falldown.wav"
     show black with vpunch
     b "Ghk…!"
-    "I manage to catch her off balance and knock her to the ground before she can get too close."
+    t "I manage to catch her off balance and knock her to the ground before she can get too close."
     play sound "audio/knifedrop.wav"
-    "She lets go of the knife and I kick it across the floor, far from her reach."
+    t "She lets go of the knife and I kick it across the floor, far from her reach."
     h shocked "Blair……?"
-    play music "<volume 0.6>audio/gameover.mp3" fadein 1.0 fadeout 5.0
+    play music "<volume 0.5>audio/fight.wav" fadein 4.0 fadeout 0.5
+    # play music "<volume 0.6>audio/gameover.mp3" fadein 1.0 fadeout 5.0
     show black with slow_dissolve:
         alpha 0.7
-    "Huh?"
-    "What’s happening?"
+    t "Huh?"
+    t "What’s happening?"
     "Did Blair just…{w=0.2} try to kill me?"
     hide black with slow_dissolve
     show blair crying at center with slow_dissolve:
@@ -137,6 +140,7 @@ label fight:
     return
 
 label nothing:
+    $ renpy.block_rollback()
     # Fade to red?
     play sound "audio/stab.wav"
     show red with sprite_dissolve:
@@ -147,7 +151,8 @@ label nothing:
     play sound "<volume 0.8>audio/falldown.wav"
     show black with vpunch
     $ renpy.pause(2.3, hard=True)
-    play music "<volume 0.25>audio/gameover.mp3" fadein 1.0 fadeout 5.0
+    play music "<volume 0.5>audio/fight.wav" fadein 4.0 fadeout 0.5
+    # play music "<volume 0.25>audio/gameover.mp3" fadein 1.0 fadeout 5.0
     hide black with slow_dissolve
     scene bg altdinner:
         blur 16

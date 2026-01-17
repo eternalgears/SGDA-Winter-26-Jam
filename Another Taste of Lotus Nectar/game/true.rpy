@@ -1,4 +1,5 @@
 ﻿label trueending:
+    hide cg annoy with medium_dissolve
     $ renpy.block_rollback()
         #STOP TALKING SECTION (from kitchen label)
 
@@ -9,18 +10,18 @@
     scene bg altdinner with slow_dissolve
 
     h neutral "...."
-    h frustrated "It’s no use."
+    h frustrated "It's no use."
     show black:
         alpha 0.6
     play music "<volume 2.5>audio/room noise.mp3" fadein 2.0 fadeout 1.0
-    n "{color=#FFFF00}{cps=20}No matter how hard I try to talk to her, she just doesn’t understand me.{/cps}"
-    n "{color=#FFFF00}{cps=20}Blair, you said you would give me the world.{w=0.2} And yet…{/cps}"
-    n "{color=#FFFF00}{cps=20}We can’t hold each other asleep like we used to.{/cps}"
-    n "{color=#FFFF00}{cps=20}You can’t tell me that you love me,{w=0.2} because I’m always going to be spitting out those words for you.{/cps}"
-    n "{color=#FFFF00}{cps=20}We can’t even go visit our hometown and watch the lotus flowers in their bloom anymore.{/cps}"
+    n "{color=#FFFF00}{cps=20}No matter how hard I try to talk to her, she just doesn't understand me.{/cps}"
+    n "{color=#FFFF00}{cps=20}Blair, you said you would give me the world.{w=0.2} And yet...{/cps}"
+    n "{color=#FFFF00}{cps=20}We can't hold each other asleep like we used to.{/cps}"
+    n "{color=#FFFF00}{cps=20}You can't tell me that you love me,{w=0.2} because I'm always going to be spitting out those words for you.{/cps}"
+    n "{color=#FFFF00}{cps=20}We can't even go visit our hometown and watch the lotus flowers in their bloom anymore.{/cps}"
     show black with sprite_dissolve:
         alpha 0.8
-    n "{color=#FFFF00}{cps=16}I’ll never see you, as graceful as you are,{w=0.2} lower yourself in muddy water to pick up a soggy lotus flower for me ever again.{/cps}"
+    n "{color=#FFFF00}{cps=16}I'll never see you, as graceful as you are,{w=0.2} lower yourself in muddy water to pick up a soggy lotus flower for me ever again.{/cps}"
     nvl clear
     show black with sprite_dissolve:
         alpha 0.45
@@ -46,16 +47,17 @@ screen click_blair:
         action Jump("ending")
 
 label ending:
-    hide black with sprite_dissolve
-    show blair bored at center with slow_dissolve:
+    show blair bored at center:
         zoom 0.7
+    hide black
+    with sprite_dissolve
     b glance "...?"
     b default "Hien?"
     stop music
     play sound "<volume 0.5>audio/hug.wav"
     show black with vpunch
-    "I throw myself onto Blair, hugging her tight."
-    "I know she doesn’t want to be this close.{w=0.3} But, please let me be selfish this time too."
+    t "I throw myself onto Blair, hugging her tight."
+    t "I know she doesn't want to be this close.{w=0.3} But, please let me be selfish this time too."
     play music "<volume 0.6>audio/trueending.wav" fadein 0.5 fadeout 1.5
     scene bg lotus
     show white:
@@ -63,14 +65,14 @@ label ending:
     with slow_dissolve
     show blair shock at center with slow_dissolve:
         zoom 0.7
-    h crying "I’m sorry Blair…"
+    h crying "I'm sorry Blair..."
     play sound "<volume 0.6>audio/struggle.wav"
     with hpunch
     b enraged "What are you doing?!{w=0.2} Get off me!!"
     play sound "<volume 0.5>audio/struggle.wav"
     with hpunch
-    "Despite her attempts to flee from our embrace, I hold her steady."
-    h nervous "I just wanted this to work… {w=0.3}I love you, you know?"
+    t "Despite her attempts to flee from our embrace, I hold her steady."
+    h nervous "I just wanted this to work... {w=0.3}I love you, you know?"
     show blair crying at center with sprite_dissolve:
         zoom 0.7
     h pleadingx2 "I love you so much."

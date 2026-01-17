@@ -6,6 +6,7 @@
 define h = Character("Hien", image = "hien", color = "#a0a82c", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
 define b = Character("Blair", image = "blair", color = "#9E4331", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
 define narrator = Character(name=None, image = "hien", ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
+define t = Character(name=None, ctc = "ctc", ctc_pause = "ctc", ctc_position = "nestled")
 define n = Character(None, kind=nvl)
 
 # side images 
@@ -179,7 +180,7 @@ label start:
 
 
 label flashback:
-    scene bg lotus with slow_dissolve
+    scene bg lotus
     play music "audio/flashback.wav" fadein 0.5 fadeout 1.0
     $ renpy.pause(2.0, hard=True)
     show blair smile at center with sprite_dissolve:
@@ -208,11 +209,11 @@ label intro:
     stop music fadeout 1.0
     scene bg altlotus with slow_dissolve
     #start intro for first & second playthrough - Black screen for these two lines 
-    narrator neutral "Living with Blair used to be a dream…"
+    t "Living with Blair used to be a dream…"
     if not persistent.endingOne: #persistent.endingOne == False
-        narrator worried "Until it became one I couldn’t wake up from."
+        t "Until it became one I couldn’t wake up from."
     else: #elif persistent.endingOne == True
-        narrator worried "{color=#ff0000}Until it became one I couldn't wake up from.{/color}"
+        t "{color=#ff0000}Until it became one I couldn't wake up from.{/color}"
 
     #Kitchen background
     scene black with slow_dissolve
@@ -224,24 +225,24 @@ label intro:
         scene bg altkitchen with slow_dissolve
         show mold
     narrator neutral "I’m making dinner for Blair again."
-    narrator nervous "It’s not like I don’t enjoy making food for her,{w=0.2} she just hasn’t been as grateful as she used to be."
-    "A few months ago,{w=0.1} making dinner would earn me an endless shower of her affection."
+    t "It’s not like I don’t enjoy making food for her,{w=0.2} she just hasn’t been as grateful as she used to be."
+    t "A few months ago,{w=0.1} making dinner would earn me an endless shower of her affection."
     narrator dejected "Now I’m lucky to get a conversation out of her."
     window hide
     $ renpy.pause(2.0, hard=True)
-    narrator nervous"I know it’s not entirely her fault though."
-    "Her family plays a huge role in why she’s been acting this way."
-    narrator worried "But I wish she would at least tell me what goes on in her head."
-    "I just wish she would tell me {i}explicitly{/i} what makes her feel the way she does…"
+    t"I know it’s not entirely her fault though."
+    t "Her family plays a huge role in why she’s been acting this way."
+    t "But I wish she would at least tell me what goes on in her head."
+    t "I just wish she would tell me {i}explicitly{/i} what makes her feel the way she does…"
     narrator dejected "And why does she have to take it out on me?"
     narrator exhausted "...I feel like a dog who’s waiting for their owner to come home."
-    "It’s like she tied me to some pole and didn’t look back."
+    t "It’s like she tied me to some pole and didn’t look back."
 
     if not persistent.endingOne: #persistent.endingOne == False
         narrator slightsmile "...{w=0.3}But that means the owner doesn’t want their dog to run away!"
         "The owner is going out of their way to make sure their dog stays by their side."
-        narrator neutral glance "So I must have some sort of value…"
-        narrator nervous "Right?"
+        t "So I must have some sort of value…"
+        t "Right?"
         jump kitchen
     else: #persistent.endingOne == True
         call screen knife_select
@@ -264,9 +265,11 @@ label intro:
                 #jump kitchen
 
 label get_knife:
-    show knife:
+    play sound "<volume 0.5>audio/knife.wav"
+    show knife with sprite_dissolve:
         xalign 0.5
         yalign 0.5
-    narrator neutral "Obtained knife."
+    $ renpy.pause(1.0, hard=True)
+    t "Obtained knife."
     $ hasKnife = True
     jump kitchen

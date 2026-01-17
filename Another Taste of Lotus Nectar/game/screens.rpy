@@ -356,7 +356,8 @@ screen main_menu():
     tag menu
 
     add gui.main_menu_background
-
+    if persistent.endingOne:
+        add "images/bg altlotus.png"
     ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"
