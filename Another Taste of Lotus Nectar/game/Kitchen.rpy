@@ -166,13 +166,12 @@ label frustrations:
     show cg shocked with medium_dissolve
     $ renpy.pause(0.5, hard=True)
     b acknowledging "You..."
-    narrator worried "Her face scrunches up to something unreadable."
-    "Is she shocked? Hurt?"
+    t "Her face scrunches up to something unreadable."
+    narrator worried "Is she shocked? Hurt?"
 
     hide cg shocked with sprite_dissolve
     b acknowledging "Then, despite all that..."
     b glare "Why are you still dating me?"
-    h nervous "..."
     show black:
         alpha 0.4
     stop music fadeout 1.0

@@ -162,7 +162,10 @@ label splashscreen:
     with Pause(1.5)
 
     scene black with slow_dissolve
-
+    show text "This game has point and click elements. And violence!"
+    with slow_dissolve
+    pause
+    hide text with dissolve
     show text "Made for the SGDA Winter '25-'26 Jam."
     with slow_dissolve
     with Pause(1.5)
@@ -191,17 +194,21 @@ label flashback:
     "Her smile outshone the red sun, setting into the pond full of lilies and lotuses."
     "In this hazy, late summer, we visited our hometown again to see the lotus flowers during their blooming season."
     narrator happy "The girl across from me on the boat is Blair. {w=0.3}My everything."
-    "We grew up in the same part of town, and our families were friends with each other. {w=0.2}So it was natural that we would be together a lot."
-    "I had admired her for the longest time now. She was graceful, a sort of ethereal beauty."
-    "Though I would have never expected in a million years to be her soulmate until this moment."
-    narrator neutral glance "She dips her hand in the muddy water, probably to pick up a flower. {w=0.2}Blair always did strange things like that."
-    b "Here!"
+    show white with sprite_dissolve:
+        alpha 0.4
+    t "We grew up in the same part of town, and our families were friends with each other. {w=0.2}So it was natural that we would be together a lot."
+    t "I had admired her for the longest time now. She was graceful, a sort of ethereal beauty."
+    t "Though I would have never expected in a million years to be her soulmate until this moment."
+    hide white with sprite_dissolve
+    play sound "<volume 0.5>audio/splashpond.wav"
+    t "She dips her hand in the muddy water, probably to pick up a flower. {w=0.2}Blair always did strange things like that."
+    b laughing "Here!"
     narrator neutral "I look down and see a wet lotus flower in my palms."
     narrator slightsmile "The petals look a little soggy…{w=0.3} but it’s really the thought that counts!"
     "Ahhh…{w=0.2} Blair is so kind..."
     h "..."
     h happy "Thank you…"
-    b laughing "Hehe…"
+    b smile "Hehe…"
     "Her laughter was as sweet as the honey nectar beneath the lotus petals."
     jump intro
 
@@ -230,7 +237,10 @@ label intro:
     narrator dejected "Now I’m lucky to get a conversation out of her."
     window hide
     $ renpy.pause(2.0, hard=True)
+    show black with sprite_dissolve:
+        alpha 0.5
     t"I know it’s not entirely her fault though."
+    hide black
     t "Her family plays a huge role in why she’s been acting this way."
     t "But I wish she would at least tell me what goes on in her head."
     t "I just wish she would tell me {i}explicitly{/i} what makes her feel the way she does…"
