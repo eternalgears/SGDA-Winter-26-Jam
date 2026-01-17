@@ -17,11 +17,22 @@
 
     # Point and click element on Blair (if knife picked up on second playthrough)
 
+    if hasKnife:
+        call screen click_blair
+    
     menu:
         "Blair":
             jump ending
 
     # play true ending music here
+
+screen click_blair:
+    imagebutton:
+        xalign 0.5
+        yalign 1.0
+        idle "blair_click"
+        hover "blair_click"
+        action Jump("ending")
 
 label ending:
     b "...?"

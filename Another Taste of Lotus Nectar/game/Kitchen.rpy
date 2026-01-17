@@ -1,5 +1,7 @@
 ﻿label kitchen:
     scene bg dinner with slow_dissolve
+    if persistent.endingOne == True:
+        show mold
     h happy "I made some spaghetti…"
     h "Here you go."
     show blair default at center with sprite_dissolve:

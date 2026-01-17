@@ -70,6 +70,10 @@ image side hien worried:
     "images/side_hien_worried.png"
     zoom 0.5
 
+image blair_click:
+    "images/blair default.png"
+    zoom 0.7
+
 #transforms
 transform center:
     xalign 0.5
@@ -86,6 +90,7 @@ init: # setting timer variables in advance to avoid undefined variables
     $ timer_range = 0
     $ timer_jump = 0
     $ time = 0
+    $ hasKnife = False
 
 #countdown screen for timed sections
 screen countdown:
@@ -211,4 +216,5 @@ label get_knife:
         xalign 0.5
         yalign 0.5
     narrator neutral "Obtained knife."
+    $ hasKnife = True
     jump kitchen
