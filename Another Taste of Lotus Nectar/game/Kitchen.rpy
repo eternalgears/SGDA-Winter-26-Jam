@@ -102,10 +102,16 @@ label specific:
     h frustrated "Right now."
     h worried "You used to be open about telling your problems to me."
     h dejected "Now you don’t tell me anything."
-    b frustrated "Just because we are dating doesn’t mean that I have to tell you everything."
-    b default "I am entitled to my own life. Just like you."
+
+    show cg disinterest with sprite_dissolve
+
+    b "Just because we are dating doesn’t mean that I have to tell you everything."
+    b "I am entitled to my own life. Just like you."
     h worried "I’m not saying you have to tell me everything that goes on in your life."
     h nervous "This just… feels different to what you used to be like."
+
+    hide cg disinterest
+
     b glance "…I’ll come back to you on my own time."
     b bored "Does that satisfy you?"
     narrator shocked "Does that satisfy you? What?"
@@ -116,15 +122,21 @@ label specific:
 label frustrations:
     h frustrated "Why do I have to spell everything out for you??"
     h shocked "I’m trying to understand you right now and you can’t even give me the time of day!"
-    b annoyed "You…"
+
+    show cg shocked with sprite_dissolve
+    b "You…"
     narrator worried "Her face scrunches up to something unreadable."
     "Is she shocked? Hurt?"
+
+    show cg annoy with sprite_dissolve
     b "Then, despite all that…"
-    b glare "Why are you still dating me?"
+    b "Why are you still dating me?"
     h shocked "..."
     narrator shocked "What?"
     narrator worried "This was supposed to be the part where you apologize and say you are going to try harder for the both of us."
     narrator pleadingx2 "Now you are questioning the nature of our relationship??"
+    hide cg annoy
+    
     jump argument
 
     # end of PRESS FURTHER SECTION
