@@ -176,6 +176,11 @@ label splashscreen:
 
 label start:
 
+    if persistent.endingOne == True:
+        $ persistent.endingOne == True
+    elif persistent.endingOne == False:
+        $ persistent.endingOne == False
+
     if persistent.endingOne == False:
         jump flashback
     elif persistent.endingOne == True:
@@ -224,6 +229,7 @@ label intro:
 
     #Kitchen background
     scene black with slow_dissolve
+    scene bg kitchen with slow_dissolve
     play music "audio/room noise.mp3" fadein 0.5 fadeout 1.0
     $ renpy.pause(2.0, hard=True)
     if persistent.endingOne == False:
